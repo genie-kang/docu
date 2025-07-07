@@ -1,0 +1,19 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.featureSvg {
+  height: 200px;
+  width: 200px;
+}
+
+.featureImg {
+  height: 200px;
+  width: 250px;
+  /* margin-bottom: 1rem; */
+  /* object-fit: contain; 비율 유지하면서 꽉 차게 */
+  display: inline-block;
+}

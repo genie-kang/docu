@@ -1,0 +1,306 @@
+---
+title: Linux Agent Installation
+sidebar_position: 3
+---
+
+# SentinelOne LinuxOS Agent Installation Guide
+
+## 1. Linux OS & Agent Version Compatibility
+
+> The Linux Agent is not supported on Kubernetes(K8s) platforms. <br />
+
+### 1) Linux CentOS, RHEL, Azure
+| **Linux Distro and Version**  | **24.3** | **24.2** | **24.1**  | **23.4**  | **23.3**  |  **23.2** | **23.1**  | **22.4** |  **22.3** |
+|-------------------------------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+| AlmaLinux 9.5                 |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| AlmaLinux 9.4                 |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| AlmaLinux 9.3, 9.2            |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |    X     |
+| AlmaLinux 8.10                |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| AlmaLinux 8.8                 |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    X     |    X     |
+| AlmaLinux 9.1, 9.0, 8.7, <br /> 8.6, 8.5, 8.4 |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |
+| Amazon Linux 2023.6, 2023.5   |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| Amazon Linux 2023.3           |    O     |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |
+| Amazon Linux 2023.1, 2023     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    X     |    X     |
+| Amazon Linux 2, AMI 2018, <br /> AMI 2017 |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |
+| Azure Linux (formerly CBL-<br /> Mariner) |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |    X     |
+| CentOS 8.4 - 8.0, 7.9 - 7.0, <br /> 6.10 - 6.4 |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |
+| Centos Stream v9              |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |    X     |
+| Red Hat Enterprise Linux <br />(RHEL) 9.5 |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| Red Hat Enterprise Linux <br />(RHEL) 9.4 |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| Red Hat Enterprise Linux <br />(RHEL) 9.3, 9.2, 8.9 |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |    X     |
+| Red Hat Enterprise Linux <br />(RHEL) 8.10 |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| Red Hat Enterprise Linux <br />(RHEL) 8.8 |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    X     |    X     |
+| Red Hat Enterprise Linux <br />(RHEL) 9.1, 9.0, 8.7-8.0, <br />7.9-7.0, 6.10-6.4 |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |
+| Rocky Linux 9.5               |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| Rocky Linux 9.4               |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| Rocky Linux 9.3, 9.2          |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |    X     |
+| Rocky Linux 8.10              |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| Rocky Linux 8.8               |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    X     |    X     |
+| Rocky Linux 9.1, 9.0, 8.7, 8.6, 8.5, 8.4 |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |
+<br />
+
+### 2) Linux Debian, Ubuntu, SUSE
+| **Linux Distro and Version**  | **24.3** | **24.2** | **24.1**  | **23.4**  | **23.3**  |  **23.2** | **23.1**  | **22.4** |  **22.3** |
+|-------------------------------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+| Debian 12.8, 12.7, 12.6        |    O     |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |
+| Debian 12.5                    |    O     |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |
+| Debian 12.4                    |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |    X     |
+| Debian 12.2, 12.1, 12          |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |    X     |
+| Debian 11.9                    |    O     |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |
+| Debian 11.8, 11.7, 10.13       |    O     |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |
+| Debian 11.11, 11.10            |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |
+| Debian 11, 10, 9, 8            |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |    X     |
+| Ubuntu 24.04, 22.04.5          |    O     |    X     |    X     |    X     |    X     |    X     |    X     |    X     |    X     |
+| Ubuntu 20.04.6                 |    O     |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |
+| Ubuntu 22.04, 20.04, 18.04, 16.04, 14.04 |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |
+| SUSE Linux Enterprise Server 15 sp6 |    O     |    X     |    X     |    X     |    X     |    X     |    X     |    X     |    X     |
+| SUSE Linux Enterprise Server 15 sp5 |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    X     |
+| SUSE Linux Enterprise Server 11 sp4 |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |    X     |
+| SUSE Linux Enterprise Server 15.x, 12.x |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| Scientific Linux 7, 6          |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |
+| Virtuozzo 7                    |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |
+<br />
+
+### 3) Linux Oracle and Fedora
+| **Linux Distro and Version**  | **24.3** | **24.2** | **24.1**  | **23.4**  | **23.3**  |  **23.2** | **23.1**  | **22.4** |  **22.3** |
+|-------------------------------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+| CloudLinux Shared v8, v6*      |    O     |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |
+| Fedora 40                      |    O     |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |
+| Fedora 39, 38                  |    O     |    X     |    X     |    X     |    X     |    X     |    X     |    X     |    X     |
+| Fedora 37, 36, 35              |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |
+| Oracle 9.5                      |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| Oracle 9.3, 9.2, 8.9           |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |    X     |
+| Oracle 9.1, 8.8                |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    X     |    X     |
+| Oracle 8.10                    |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| Oracle 9.0, 8.7-8.0, 7.9 - 7.0, 6.10, 6.9 |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |
+
+
+***Note***: *CloudLinux Shared support includes hybrid and non-hybrid kernels. Containers are not supported.*<br />
+
+### 4) Linux ARM 
+| **Linux Distro and Version**  | **24.3** | **24.2** | **24.1**  | **23.4**  | **23.3**  |  **23.2** | **23.1**  | **22.4** |  **22.3** |
+|-------------------------------|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+| AlmaLinux 8.10                 |    O     |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |
+| AlmaLinux 8.8                  |    O     |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |
+| AlmaLinux 9.1, 9.0, 8.7, 8.6  |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |
+| Alma Linux 9.3, 9.2            |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |    X     |
+| AlmaLinux 9.4                  |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| AlmaLinux 9.5                  |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| Amazon Linux 2                 |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |
+| Amazon Linux 2023.1, 2023      |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    X     |
+| Amazon Linux 2023.3            |    O     |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |
+| Amazon Linux 2023.6, 2023.5    |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| Debian 11, 10                  |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |
+| Debian 11.11, 11.10            |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| Debian 11.8, 11.7, 10.13       |    O     |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |
+| Debian 11.9                    |    O     |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |
+| Debian 12.2, 12.1, 12          |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |    X     |
+| Debian 12.4                    |    O     |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |
+| Debian 12.5                    |    O     |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |
+| Debian 12.8, 12.7, 12.6        |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| RHEL 8.10                      |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| RHEL 8.8                       |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    X     |    X     |
+| RHEL 9.1, 9.0, 8.4 - 8.7       |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |
+| RHEL 9.3, 9.2, 8.9             |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |    X     |
+| RHEL 9.4                       |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| RHEL 9.5                       |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| Rocky Linux 8.10               |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| Rocky Linux 8.8                |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    X     |    X     |
+| Rocky Linux 9.1, 9.0, 8.7, 8.6 |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |
+| Rocky Linux 9.3, 9.2           |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |    X     |
+| Rocky Linux 9.4                |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| Rocky Linux 9.5                |    O     |    O     |    O     |    X     |    X     |    X     |    X     |    X     |    X     |
+| SUSE 15 sp5                    |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    X     |
+| SUSE 15 sp6                    |    O     |    X     |    X     |    X     |    X     |    X     |    X     |    X     |    X     |
+| SUSE 15.x                      |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |
+| Ubuntu 20.04.6                 |    O     |    O     |    O     |    O     |    O     |    O     |    X     |    X     |    X     |
+| Ubuntu 22.04, 20.04, 18.04     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |    O     |
+| Ubuntu 24.04, 22.04.5          |    O     |    X     |    X     |    X     |    X     |    X     |    X     |    X     |    X     |
+- The Linux Agent for ARM is supported for Linux servers deployed on AWS EC2 instances powered by Graviton2 and Graviton3 ARM processors.
+
+- Installation of the Linux ARM Agent is the same as for the Linux Agent on x86, but make sure you use the correct installer. The x86 package will not install on ARM endpoints, and the ARM installer will not install on x86 endpoints.
+
+- AWS GovCloud is not supported.<br /><br />
+
+
+<!-- ### Required Software
+ None on baseline distro installations.<br />If your Linux OS is customized, first get the list of requirements. Run one of these commands:
+  <br /> -->
+
+## 2. Linux Minimum Hardware Requirements
+| **Hardware Component**  | **Requirement & Notes** |
+|-------------------------|-----------------------|
+| CPU                     |    2GHz Dual-core    |   
+| Memory(RAM)             |    4GB, according to distro requirements     | 
+| Disk Space              |    2GB available in `/opt/sentinelone`(3GB recommended).<br />Make sure the endpoint meets the minimum disk space and partition requirements of the Linux distro it is running on.  |
+| CPU Instruction Support |   SSE4_2 required.<br />Some virtual environments mask support for advanced CPU capabilities. See your VM vendor documentation. Example: VMWare article <u>How to Override Masks</u> Hyper-V article <u>How to turn off processor compatibility mode.</u>     |
+<br /><br />
+<!-- - 2GHz Dual-core CPU
+- 4GB RAM, according to distro requirements
+- 2GB available in `/opt/sentinelone`. We recommend 3GB.<br />Make sure the endpoint meets the minimum disk space and partition requirements of the Linux distro it is running on.
+- Instruction-supported CPU: SSE4_2.<br />Some virtual environments mask support for advanced CPU capabilities. See your VM vendor documentation. Example: VMWare article <u>How to Override Masks</u> Hyper-V article <u>How to turn off processor compatibility mode.</u><br /><br /> -->
+
+<!-- ### Linux Operating System Architecture Notes**
+- The Linux Agent supports SELinux in Permissive and Enforcing modes. To use SELinux in a hardened environment, in Strict mode, follow the instructions in <u>Configuring SELinux for Different Modes.</u>
+- Major cloud providers support installation of the Linux Agent on instances that meet the system requirements.
+- Supported with ECS Anywhere. For more information see <u>Containerized Workloads in AWS.</u>
+- For Docker containers, the Agent supports only the overlay2 storage driver.  For monitoring and protecting the containers, the Agent requires the OverlayFS filesystem used by the containers to be mounted on the host’s filesystem,  /var/lib/docker/overlay/merged, the default Docker location. For more information, see <u>OverlayFS Storage Driver.</u>
+  
+- The Linux Agent is compiled with **64-bit** kernel and libraries. It supports Intel x86_64 compatible architecture and x64 hardware. **ARM 64-bit** architecture (also known as aarch64) is supported starting with Agent version 22.1.<br />
+    ***The Linux Agent does not support:***
+    - *32-bit architecture*
+    - *CPU micro-architectures such as ppc64, x86_32, RISC, or MIPS*
+    - *UNIX OS version such as FreeBSD, AIX, or Solaris*
+
+- The Linux Agent can be installed on Desktops and Servers of the supported distributions, of new kernel versions only (for example: Oracle 6.9 kernel-uek-4.1.12-61*).<br />
+  ***Limitations of older kernels:***
+  - *Kernels earlier than 2.6 (build 2.6.32-358) - Not supported.*
+  - *Kernels earlier than 3.8 - Static AI and Reputation engines are not triggered on new files written to disk, but they do work from Full Disk Scan. Event Collection File Modification and Network Action event types are not supported.*
+  - *Kernels earlier than 3.10 - Containers are not supported.*
+  - *Kernels earlier than 3.10 - Not compatible with eBPF.*
+  - *Kernels earlier than 3.11 - Static AI cannot analyze files as they are written to a container. The Agent analyzes these files when the files are executed.*
+
+- Kernel version 4.18.0-147 on RHEL 8.1, a soft lockup might occur when the Agent uses eBPF. The issue is resolved in RHEL-8.2 with a newer kernel.
+
+- The Agent does not support systems with Kernel Lockdown set to Confidentiality.<br />
+  *Example: Fedora 31 kernel 5.3.7 default Kernel Lockdown was "Confidentiality" which is not supported. Fedora 31 kernel 5.5.x default is "Integrity", which is supported.*<br /><br /> -->
+
+
+
+
+## 3. Installing the Linux Agent with RPM or DPKG
+
+<!-- > <br />Supported from Agent version: Linux 3.0<br /><br />
+
+### Follow these steps to install the Linux Agent
+1. Ensure that the endpoints fulfill the Agent Requirements on Linux.
+2. Optional: Create a Linux deployment configuration file. <br /> Optional: Create a deployment script.
+3. Download and install the package. Associate with a Site. Activate the Agent.<br /><br /> -->
+
+### 1) Download the package :
+
+-  &nbsp;  **➊ Sentinels**  > **➋ PACKAGES** > **➌ All Platform Types** > **➍ Linux** <br />![Agent Version List](./img/linux/package_number.png)
+-  **Download the package for the distro of the endpoints.**<br />![Agent Version List](./img/linux/package_down.png)
+   -  Please download the latest **GA** version, which has been tested and stabilized.
+   - The EA version is a test-only agent and may cause unexpected bugs or issues.
+   - Please download the ARM64 file if you are using an ARM CPU.
+  <br />
+
+
+  ### 2) Install Workflow :
+- **RPM**:
+  - Run <span class = "text-red">*`sudo rpm -i --nodigest package_pathname`*</span>.<br />
+    ```bash
+    [root@localhost SentinelOne]$ sudo rpm -i --nodigest SentinelAgent_linux_x86_64_v24_3_3_6.rpm
+    warning: SentinelAgent_linux_x86_64_v24_3_3_6.rpm: Header V4 RSA/SHA256 Signature, key ID bf000751: NOKEY
+    ```
+    
+
+  - Associate the Agent with the Management Console with the Site Token.<br />Run <span class = "text-red">*`sudo /opt/sentinelone/bin/sentinelctl management token set <site_token_value>`*</span>.<br />
+    ```bash
+    [root@localhost SentinelOne]$ sudo /opt/sentinelone/bin/sentinelctl management token set eyJ1cmwiOiAiaHR0cHM6Ly9hcHNlMS1wYWdvLnNlbnRpbmVsb25lLm5ldCIsICJzaXRlX2tleSI6ICIzNTY0MTE5MzU3YjU3NGE4In0= 
+    Setting registration token...
+    Registration token successfully set
+    ```
+    - **Sentinels** > **PACKAGES** or **SITE INFO** > ***stie_token_value***<br />![Agent Version List](./img/linux/site_token.png)
+    <br />
+
+  - Start the Agent services.<br />Run <span class = "text-red">*`sudo /opt/sentinelone/bin/sentinelctl control start`*</span>.<br />
+    ```bash
+    [root@localhost SentinelOne]$ sudo /opt/sentinelone/bin/sentinelctl control start
+    Starting agent...
+    Agent is running
+    ```
+    - Go to the console and check the agent hostname.<br />&nbsp;![Agent Version List](./img/linux/rpm_agent.png)
+  <br />
+
+
+  - After a few minutes, check the Agent status. Other software may interfere with the startup.<br />Run <span class = "text-red">*`sudo /opt/sentinelone/bin/sentinelctl management status`*</span>.<br /><br />
+    ```js
+    [root@localhost SentinelOne]$ sudo /opt/sentinelone/bin/sentinelctl management status
+    Anti Tamper                      On
+    AppInventory force update        86400
+    AppInventory interval            600
+    Connect through                  direct
+    Connectivity                     On
+    Customer id                      undefined
+    Device type                      server
+    Machine information interval     600
+    Override DV proxy address        undefined
+    Proxy address                    undefined
+    Secured protocol mode            best_effort
+    Site-Key                         03b40c38997920d2
+    URL                              https://apse1-pago.sentinelone.net
+    UUID                             <UUID_value>
+    ```
+  <br />
+  <!-- - Validate that a new version of the Agent is installed.<br />From the endpoint, Run <span class = "text-red">*`sudo /opt/sentinelone/bin/sentinelctl version`*</span>.<br />
+    ```js
+    [root@localhost SentinelOne]$ sudo /opt/sentinelone/bin/sentinelctl version
+    Agent version: 24.3.3.6
+    SentinelCTL version: 24.3.3.6
+    Ranger version: 23.4.2.1
+    Git hash: <githash_value>
+    ``` -->
+  <br />
+
+- **DEB**:
+  - Run <span class = "text-red">*`sudo dpkg -i package_pathname`*</span>.<br />
+    ```js
+    [root@localhost:~/SentinelOne]$ sudo dpkg -i SentinelAgent_linux_x86_64_v24_3_3_6.deb
+    (Reading database ... 183344 files and directories currently installed.)
+    Preparing to unpack SentinelAgent_Linux_x86_64_v24_3_3_6.deb ...
+    Unpacking sentinelagent (24.3.3.6) over (24.3.1.29) ...
+    Setting up sentinelagent (24.3.3.6) ...
+    Starting agent...
+    Agent is running
+    Processing triggers for systemd (245.4-4ubuntu3.20) ...
+    ```
+    <br />
+
+  - Associate the Agent with the Management Console with the Group or Site Token.<br />Run <span class = "text-red">*`sudo /opt/sentinelone/bin/sentinelctl management token set <site_token_value/group_token_value>`*</span>.<br />
+    ```js
+    [root@localhost:~/SentinelOne]$ sudo /opt/sentinelone/bin/sentinelctl management token set eyJ1cmwiOiAiaHR0cHM6Ly9hcHNlMS1wYWdvLnNlbnRpbmVsb25lLm5ldCIsICJzaXRlX2tleSI6ICIzNTY0MTE5MzU3YjU3NGE4In0= 
+    Setting registration token...
+    Registration token successfully set
+    ```
+    <br />
+
+  - Start the Agent services.<br />Run <span class = "text-red">*`sudo /opt/sentinelone/bin/sentinelctl control start`*</span>.<br />
+    ```bash
+    [root@localhost:~/SentinelOne]$ sudo /opt/sentinelone/bin/sentinelctl control start
+    Starting agent...
+    Agent is running
+    ```
+    - Go to the console and check the agent hostname.<br />![Agent Version List](./img/linux/deb_agent.png)
+
+  <br /><br />
+  
+  - After a few minutes, check the Agent status. Other software may interfere with the startup.<br />Run <span class = "text-red">*`sudo /opt/sentinelone/bin/sentinelctl management status`*</span>.<br /><br />
+    ```js
+    [root@localhost SentinelOne]$ sudo /opt/sentinelone/bin/sentinelctl management status
+    Anti Tamper                      On
+    AppInventory force update        86400
+    AppInventory interval            600
+    Connect through                  direct
+    Connectivity                     On
+    Customer id                      undefined
+    Device type                      server
+    Machine information interval     600
+    Override DV proxy address        undefined
+    Proxy address                    undefined
+    Secured protocol mode            best_effort
+    Site-Key                         03b40c38997920d2
+    URL                              https://apse1-pago.sentinelone.net
+    UUID                             <UUID_value>
+    ```
+    <br />
+
+  <!-- - Validate that a new version of the Agent is installed.<br />From the endpoint, Run <span class = "text-red">*`sudo /opt/sentinelone/bin/sentinelctl version`*</span>.<br />
+    ```js
+    [root@localhost SentinelOne]$ sudo /opt/sentinelone/bin/sentinelctl version
+    Agent version: 24.3.3.6
+    SentinelCTL version: 24.3.3.6
+    Ranger version: 23.4.2.1
+    Git hash: <githash_value>
+    ``` -->

@@ -1,0 +1,42 @@
+---
+title: "Installing Error"
+sidebar_position: 2
+---
+
+import React from 'react';
+import html2pdf from 'html2pdf.js';
+
+## Windows 에이전트 설치 실패
+
+<button className="pdf-download-btn" onClick={() => {
+  const element = document.getElementById('pdf-content');
+
+  const opt = {
+    margin:       0.5,
+    filename:     'windows-agent-deploy-error.pdf',
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  { scale: 2 },
+    jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+  };
+
+  html2pdf().from(element).set(opt).save();
+}}>
+  PDF 다운로드
+</button>
+
+<div id="pdf-content">
+  <h2>PDF로 변환될 내용입니다</h2>
+  <p>여기에 문서 내용을 넣으면 PDF로 저장됩니다.</p>
+   <img src="/img/scree-blue-blue.png" alt="테스트 이미지" width="300" />
+
+  <ul>
+    <li>테스트</li>
+    <li>테스트4</li>
+    <li>테스트3</li>
+  </ul>
+</div>
+
+<br />
+# 제목1
+## 제목2
+### 제목3

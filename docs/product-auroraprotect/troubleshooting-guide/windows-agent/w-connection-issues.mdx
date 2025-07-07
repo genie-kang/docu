@@ -1,0 +1,59 @@
+---
+title: "Connection Error"
+sidebar_position: 1
+---
+
+# 오프라인 에이전트 및 통신 문제 해결
+---
+
+## 1. 443 포트 통신 여부 확인
+
+443 포트가 방화벽에서 열려 있는지 확인하기 위해 Telnet 명령어로 통신 가능 여부를 테스트합니다.
+- `telnet <your_console.cylance.com> 443` 명령어를 실행하여 443 포트를 통해 에이전트와 콘솔 간 통신 확인하십시오.<br />
+  - telnet api.cylance.com 443
+  - telnet data-au.cylance.com 443
+  - telnet update-au.cylance.com 443
+  - telnet protect-au.cylance.com 443
+  - telnet download.cylance.com 443
+  - telnet Venueapi-au.cylance.com 443<br /> 
+  
+**참고사항 : telnet client 미설치 시 설치가 필요합니다.**
+
+
+---
+
+## Storylane 데모 테스트
+
+<>
+
+  <div
+    style={{
+      position: 'relative',
+      paddingBottom: 'calc(37.81% + 25px)',
+      width: '100%',
+      height: 0,
+      transform: 'scale(1)',
+    }}
+  >
+    <iframe
+      loading="lazy"
+      src="https://app.storylane.io/demo/wj0qjgse5hfs?embed=inline"
+      name="sl-embed"
+      allow="fullscreen"
+      allowFullScreen
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        border: '1px solid rgba(63,95,172,0.35)',
+        boxShadow: '0px 0px 18px rgba(26, 19, 72, 0.15)',
+        borderRadius: '10px',
+        boxSizing: 'border-box',
+      }}
+    />
+  </div>
+
+</>
+

@@ -1,0 +1,74 @@
+---
+title: Windows Agent Installation
+sidebar_position: 1
+---
+
+# SentinelOne Windows Agent Installation Guide
+
+### 1. Agent requirements on Windows
+| Group | Windows OS | Agent Version |
+|:-------:|------------|:---------------:|
+| A     | Windows 11/11 23H2/11 24H2 64-bit <br /><br /> Windows 10 64-bit <br /><br /> Windows 8.1 64-bit <br /><br /> Windows Server IoT 2019/2022/2025 <br /><br /> Server/Server Core 2025 <br /><br /> Server/Storage Server/Server Core 2022 64-bit <br /><br /> Server/Server Core 2019 64-bit <br /><br /> Server/Storage Server/Server Core 2016 64-bit <br /><br /> Server/Storage Server 2012 R2 64-bit | 24.x ~ higher <br />23.x ~ lower
+| B     | Windows 10 32-bit <br /><br /> Windows 8.1 32-bit <br /><br /> Windows 8 32/64-bit <br /><br /> Windows 7 SP1 32/64-bit <br /><br /> POSReady 7 <br /><br /> Server/Storage Server/Server Core 2012 (not R2) 32/64-bit <br /><br /> Server 2008 R2 SP1 32/64-bit | 23.x ~ lower
+
+*Group A installers use 64-bit architecture only. You cannot use Agent installers that use 32-bit architecture. <br />
+For endpoints with a Windows OS in Group A, select only Agent installers that use 64-bit architecture.* <br /><br />
+
+### 2. Required Microsoft Security Updates Per Operating System
+| Windows OS | Required Microsoft Security Updates |
+|------------|-------------------------------------|
+| Windows 8.1 64-bit <br /><br /> Windows Server/Storage Server 2012 R2 | KB2919442 <br /> KB2919355 (includes KB2932046, KB2959977, KB2937592, KB2938439, and KB2934018) <br /> KB3042058 to update the default TLS cipher suites. <br />
+| Windows 8 <br /><br /> Windows Server/Storage Server/Server Core 2012 (not R2) | KB3003729 <br /> KB3042058 to update the default TLS cipher suites.
+| Windows 7 SP1 <br /><br /> Windows Server 2008 R2 SP1 <br /><br /> POSReady 7 | KB2533623 <br /> KB2758857 <br /> KB4457144 <br /> KB3042058 to update the default TLS cipher suites. <br /> KB3140245 <br /> KB3020369 <br /> KB3033929 (SHA2) - This security update must be installed to meet the minimum requirements for the installer. |
+<br />
+
+<!-- - Please click for the installation file for each hotfix. <br /> -->
+
+## 3. Minimum Hardware Requirements
+| Minimum | Recommended |
+|---------|-------------|
+| 1 GHz CPU or better <br /><br /> Single-core (can install but there will be performance issues) | Dual-core |
+| 1 GB RAM | 4 GB RAM or more |
+| 2 GB free disk space on the Windows partition <br /><br /> 10% of disk for VSS snapshots (for each drive) | 10 GB recommended <br /><br /> 10% of disk for VSS snapshots (for each drive) |
+<br />
+
+## 4. Agent File Download
+-  &nbsp;  **➊ Sentinels**  > **➋ PACKAGES** > **➌ All Platform Types** > **➍ Linux**
+ ![alt text](./img/windows/image-13.png)
+ ![alt text](./img/windows/image-15.png)
+- Please download the latest **GA version**, which has been tested and stabilized. <br />
+- The EA version is a test-only agent and may cause unexpected bugs or issues.
+- Please download the ARM64 file if you are using an ARM CPU.
+
+## 5. Check installation token
+<!-- - &nbsp; **1) SENTINELS** > **2) SITE INFO** > **3) Site Token**
+   ![alt text](./img/windows/image-16.png) -->
+
+- &nbsp; **1) SENTINELS** > **2) PACKAGES** > **3) Site Token**
+   ![alt text](./img/windows/image-17.png)
+   *Must select a minimum **site scope to check** site token information.* <br />
+   *ex) Global / 00_(KR)_PAGO Account / **Installation***
+
+## 5. Agent Installation
+- &nbsp; **1) SentinelInstaller.msi** > **2) Right Click** > **3) Install** <br />
+   ![alt text](./img/windows/image-6.png)
+   * Installation is required with administrator privileges. <br />
+
+- &nbsp; **1) Enter the Site Token** > **2) Install** <br />
+   ![alt text](./img/windows/image-8.png)
+
+- &nbsp; Finish Click <br />
+   ![alt text](./img/windows/image-9.png)
+
+## Agent Status Check
+- &nbsp; Check the SentinelOne agent tray icon in the lower right corner - Click <br />
+   ![alt text](./img/windows/image-10.png)
+- &nbsp; Check 'SECURE' and 'Online' status <br />
+   ![alt text](./img/windows/image-11.png)
+   *Agent checks are required if not in SECURE or Online.*
+
+- &nbsp; AGENT DETAILS <br />
+  ![alt text](./img/windows/image-18.png)
+  *Can view information about the agent, such as the host name, agent version, and installation date.*
+
+  

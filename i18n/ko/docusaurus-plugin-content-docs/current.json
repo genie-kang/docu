@@ -1,0 +1,90 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Tutorial - Basics": {
+    "message": "Tutorial - Basics",
+    "description": "The label for category Tutorial - Basics in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Tutorial - Basics.link.generated-index.description": {
+    "message": "5 minutes to learn the most important Docusaurus concepts.",
+    "description": "The generated-index page description for category Tutorial - Basics in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Tutorial - Extras": {
+    "message": "Tutorial - Extras",
+    "description": "The label for category Tutorial - Extras in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Product - Stellar Cyber": {
+    "message": "제품 - Stellar Cyber",
+    "description": "The label for category Product - Stellar Cyber in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Product - Stellar Cyber.link.generated-index.description": {
+    "message": "Stellar Cyber 문서",
+    "description": "The generated-index page description for category Product - Stellar Cyber in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Product - CylancePROTECT": {
+    "message": "제품 - CylancePROTECT",
+    "description": "The label for category Product - CylancePROTECT in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Product - CylancePROTECT.link.generated-index.description": {
+    "message": "CylancePROTECT 문서",
+    "description": "The generated-index page description for category Product - CylancePROTECT in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Troubleshooting": {
+    "message": "Troubleshooting",
+    "description": "The label for category Troubleshooting in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Troubleshooting.link.generated-index.description": {
+    "message": "CylancePROTECT 문서",
+    "description": "The generated-index page description for category Troubleshooting in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Product - SentinelOne": {
+    "message": "제품 - SentinelOne",
+    "description": "The label for category Product - SentinelOne in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Product - SentinelOne.link.generated-index.description": {
+    "message": "SentinelOne 문서",
+    "description": "The generated-index page description for category Product - SentinelOne in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Deployment Guide": {
+    "message": "Deployment Guide",
+    "description": "The label for category Deployment Guide in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Deployment Guide.link.generated-index.description": {
+    "message": "Deployment",
+    "description": "The generated-index page description for category Deployment Guide in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Install Agent": {
+    "message": "Install Agent",
+    "description": "The label for category Install Agent in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Install Agent.link.generated-index.description": {
+    "message": "Installation",
+    "description": "The generated-index page description for category Install Agent in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Troubleshooting Guide": {
+    "message": "Troubleshooting Guide",
+    "description": "The label for category Troubleshooting Guide in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Troubleshooting Guide.link.generated-index.description": {
+    "message": "Troubleshooting",
+    "description": "The generated-index page description for category Troubleshooting Guide in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Troubleshooting Windows Agents": {
+    "message": "Troubleshooting Windows Agents",
+    "description": "The label for category Troubleshooting Windows Agents in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Troubleshooting Windows Agents.link.generated-index.description": {
+    "message": "Troubleshooting",
+    "description": "The generated-index page description for category Troubleshooting Windows Agents in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Uninstall Guide": {
+    "message": "Uninstall Guide",
+    "description": "The label for category Uninstall Guide in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Uninstall Guide.link.generated-index.description": {
+    "message": "Uninstall",
+    "description": "The generated-index page description for category Uninstall Guide in sidebar tutorialSidebar"
+  }
+}

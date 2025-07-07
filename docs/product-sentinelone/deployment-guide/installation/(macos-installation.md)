@@ -1,0 +1,91 @@
+---
+title: macOS Agent Installation
+sidebar_position: 2
+---
+
+# SentinelOne macOS Agent Installation Guide
+> Apple does not provide developers with the GA version before the release and tends to make changes between the Beta version (shared with developers) and the GA version. <br />We <span class="text-red">recommend that you suspend OS updates</span> until SentinelOne formally supports the new macOS versions. <br />New OS and hardware releases from Apple may have specific requirements and certain features and functionality of SentinelOne Solutions may be affected by such releases.
+
+---
+<br/>
+
+## 1. Apple Operating System Versions
+<!-- This is the list of SentinelOne agent versions supported by each macOS version. -->
+| **OS Name**     | **OS Version**          | **SentinelOne Agent Version** | **24.4** | **24.3** | **24.2** | **24.1** | **23.4** | **23.3** | **23.2 (EOS)** | **23.1 (EOS)** |
+|-----------------|-------------------------|------------------------------|----------|----------|----------|----------|----------|----------|----------------|----------------|
+| **Sequoia**     | 15.3                    | | 24.4.1                       | 24.3.2   | 24.2.2   | 24.1.2   |         |         |         |               |               |
+|                 | 15.0, 15.0.1, 15.1, 15.1.1, 15.2 | | 24.4.1 | 24.3.2 | 24.2.2 | 24.1.2 |  |  |  |  |
+| **Sonoma**      | 14.7.4                  | | 24.4.1                       | 24.3.2   | 24.2.2   |        |         |        |         |            |              |
+|                 | 14.7.2, 14.7.3          | | 24.4.1                       | 24.3.2   | 24.2.2   | 24.1.3   |        |         |        |              |              |
+|                 | 14.7.1                  | | 24.4.1                       | 24.3.2   | 24.2.2   | 24.1.3   | 23.4.3+  |        |       |              |              |
+|                 | 14.7                    | | 24.4.1                       | 24.3.2   | 24.2.2   | 24.1.3   | 23.4.3+  | 23.3.2+  |        |               |              |
+|                 | 14.6.1                 |  | 24.4.1                       | 24.3.2   | 24.2.2   | 24.1.3   | 23.4.3+  | 23.3.2+  |       |              |              |
+|                 | 14.6                    | | 24.4.1                       | 24.3.2   | 24.2.2   | 24.1.2+  | 23.4.1+  | 23.3.2+  |         |              |             |
+|                 | 14.2, 14.2.1, 14.3, 14.3.1, 14.4, 14.4.1, 14.5 | | 24.4.1 | 24.3.2 | 24.2.2 | 24.1.1+ | 23.4.1+ | 23.3.2+ | 23.2.6+ |  |
+|                 | 14.0, 14.1, 14.1.1, 14.1.2 | | 24.4.1 | 24.3.2 | 24.2.2 | 24.1.1+ | 23.4.1+ | 23.3.1+ | 23.2.2+ | 23.1.3+ |
+| **Ventura**     | 13.7.4                  | | 24.4.1                       | 24.3.2   | 24.2.2   |        |         |         |        |               |              |
+|                 | 13.7.2, 13.7.3          | |                            |         | 24.2.2   | 24.1.3   | 23.4.3   |         |        |              |               |
+|                 | 13.7.1                  | | 24.4.1                       | 24.3.2   | 24.2.2   | 24.1.3   | 23.4.3+  |        |         |              |               |
+|                 | 13.7                    | | 24.4.1                       | 24.3.2   | 24.2.2   | 24.1.3   | 23.4.3+  | 23.3.2+  |        |               |              |
+|                 | 13.6.9                 |  | 24.4.1                       | 24.3.2   | 24.2.2   | 24.1.3   | 23.4.3+  | 23.3.2+  |         |              |               |
+|                 | 13.6.8                 |  | 24.4.1                       | 24.3.2   | 24.2.2   | 24.1.3   | 23.4.1+  | 23.3.2+  |        |               |              |
+|                 | 13.6.3, 13.6.4, 13.6.5, 13.6.6, 13.6.7 | | 24.4.1 | 24.3.2 | 24.2.2 | 24.1.1+ | 23.4.1+ | 23.3.2+ | 23.2.6+ |  |
+|                 | 13.5.1, 13.6, 13.6.1     | | 24.4.1                       | 24.3.2   | 24.2.2   | 24.1.1+  | 23.4.1+  | 23.3.1+  | 23.2.1+  | 23.1.3+  |
+|                 | 13.3, 13.3.1, 13.3.1(a), 13.4, 13.4.1, 13.5 | | 24.4.1 | 24.3.2 | 24.2.2 | 24.1.1+ | 23.4.1+ | 23.3.1+ | 23.2.1+ | 23.1.1+ |
+|                 | 13.2, 13.2.1            | | 24.4.1                       | 24.3.2   | 24.2.2   | 24.1.1+  | 23.4.1+  | 23.3.1+  | 23.2.1+  | 23.1.1+  |
+|                 | 13.0, 13.1             | | 24.4.1                       | 24.3.2   | 24.2.2   | 24.1.1+  | 23.4.1+  | 23.3.1+  | 23.2.1+  | 23.1.1+  |
+| **Monterey**    | 12.7.6                  | |                            |   | 24.2.2   | 24.1.3   | 23.4.1+  | 23.3.2+  |   |              |
+|                 | 12.7.2, 12.7.3, 12.7.4, 12.7.5 | |  |  | 24.2.2 | 24.1.1+ | 23.4.1+ | 23.3.2+ |  23.2.6+ |  |
+|                 | 12.7.1        |           |                     |   | 24.2.2   | 24.1.1+  | 23.4.1+  | 23.3.2+  | 23.2.3+  | 23.1.3+ |
+|                 | 12.7              |        |                  |   | 24.2.2   | 24.1.1+  | 23.4.1+  | 23.3.1+  | 23.2.1+  | 23.1.1+ |
+|                 | 12.6.8           |       |                      |    | 24.2.2   | 24.1.1+  | 23.4.1+  | 23.3.1+  | 23.2.1+  | 23.1.1+ |
+|                 | 12.6.1 - 12.6.7        | |                    |    | 24.2.2   | 24.1.1+  | 23.4.1+  | 23.3.1+  | 23.2.1+  | 23.1.1+ |
+|                 | 12.4 - 12.6           ||                    |   | 24.2.2   | 24.1.1+  | 23.4.1+  | 23.3.1+  | 23.2.1+  | 23.1.1+ |
+|                 | 12.2 - 12.3.1       |     |                  |  | 24.2.2   | 24.1.1+  | 23.4.1+  | 23.3.1+  | 23.2.1+  | 23.1.1+ |
+|                 | 12.0, 12.1          |  |                  |    | 24.2.2   | 24.1.1+  | 23.4.1+  | 23.3.1+  | 23.2.1+  | 23.1.1+ |
+<br />
+
+## 2. macOS SentinelOne Agent Installer Download
+
+### 1) Download the package :
+
+- &nbsp; **➊ Sentinels** > **➋ Packages** > **➌ All Platform Types** > **➍ MacOS**<br />![Agent Version List](./img/macOS/package_number.png)<br />
+
+-  **Download the package for the distro of the endpoints.**<br />![Agent Version List](./img/macOS/package_down.png)
+   -  Please download the latest **GA** version, which has been tested and stabilized.
+   - The EA version is a test-only agent and may cause unexpected bugs or issues.
+   - Please download the ARM64 file if you are using an ARM CPU.
+  <br />
+
+<!-- - Check SentinelOne Agent Installer.<br />![Agent Installer list](./img/macOS/agent_installer.png) -->
+
+### 2) Getting a site token :
+
+
+- Check the Site Token value in the Package.<br />![Agent Site Token](./img/macOS/site_token.png)<br />
+
+<!-- - Click the icon at the top to view site details, **1) Group** > **2) Group Info**<br />![Agent Group Token](./img/macOS/group_token.png)<br /> -->
+
+## 3. Installing the SentinelOne Agent for macOS
+
+> On 10.13 High Sierra -10.15 Catalina, users must approve the kernel extension on their local computers.<br /><br />On 10.15 Catalina - 11.0 Big Sur and later, users must approve Full Disk Access permissions on their local computers.<br />
+
+&nbsp;
+
+- ### 1) Start the installation and enter the token value.<br />![Agent Enter Token](./img/macOS/enter_token.png)<br />
+
+- ### 2) Allow SentinelOne Extensions to use the network extension.<br />![Agent Network Extension](./img/macOS/network_extension.png)<br />
+
+- ### 3) Check if the installation was successfully completed.<br />![Agent Installaion Successfully Completed](./img/macOS/installaion_complete.png)&nbsp;
+
+- ### 4) Go to System **Settings** > **General** > **Login** > **Items** > **Extensions**.<br />![Agent System Setting](./img/macOS/system_setting1.png)&nbsp;
+
+- ### 5) Select the Network Extensions feature.<br />![Agent System Setting](./img/macOS/system_setting2.png)&nbsp;
+  
+- ### 6) Check if the SentinelOne Extensions item is enabled, and if not, enable it.<br />![Agent Ssytem Setting](./img/macOS/system_setting3.png)&nbsp;
+
+- ### 7) Go to System Settings > Privacy & Security > Full Disk Access.<br />![Agent System Setting](./img/macOS/system_setting4.png)&nbsp;
+
+- ### 8) Allow Full Disk Access for the Sentinel, Sentinel_helper, and Sentinel_shell items.<br />![Agent System Setting](./img/macOS/system_setting5.png)&nbsp;
+
+- ### 9) Check the installed SentinelOne UI and verify the Online status in the top right corner.<br />![Agent UI](./img/macOS/agent_UI.png)

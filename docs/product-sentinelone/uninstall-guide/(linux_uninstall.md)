@@ -1,0 +1,43 @@
+---
+title: Linux Agent UnInstallation
+sidebar_position: 3
+---
+
+# SentinelOne LinuxOS Agent Uninstallation Guide
+><br />Only users with Management Console uninstall permissions can remove the Agent. It is important to thoroughly understand a user’s reason before you respond to a request.<br /><br />
+
+## 1. Uninstalling Agent from the Management Console 
+-  Select one or more endpoints.<br />
+   -  &nbsp; **1) Sentinels** > **2) ENDPOINTS** > **3) Select endpoint** ![Agent Selcet](./img/linux/uninstall1.png)<br /><br />
+- Uninstall the agent from the selected endpoint:
+   -  &nbsp; **1) Actions** > **2) Actions Endpoint** > **3) Uninstall.**<br />![Actions Agent](./img/linux/uninstall2.png)<br /><br />
+   - Complete the 2-factor authentication(2FA) to uninstall it from the console. Authentication is valid for 30 minutes, and re-authentication is required to perform actions again.<br />![Complete 2FA](./img/linux/uninstall3.png)
+<br /><br /><br />
+
+## 2. Uninstalling Agent From the CLI
+
+<!-- ### Follow these steps to uninstall the Linux Agent with CLI
+1. Save or copy the passphrase.
+   - Some Agent features, such as CLI uninstall, require a passphrase.
+   - If Anti-Tampering is enabled, you must have the Agent passphrase to uninstall the Agent with the CLI.
+2. Log in to the endpoint permissions: sudo for macOS, root or sudo for Linux, Administrator for Windows.
+3. Run the commands appropriate for the operating system.<br /><br /> -->
+
+### To uninstall the Linux Agent with sentinelctl CLI
+***Note:*** *A reboot is not required. You can install the Agent again immediately after the uninstall.*
+- **To get the passphrase for an endpoint from the Management Console:** <br />
+  - Supported from Agent version: Windows 4.2 | Legacy Windows 2.0 | macOS 4.2 | Linux 4.2 | K8s 4.2 
+  - &nbsp; **1) Actions** > **2) Agent Actions** > **3) Show Passphrase.**<br />![Show Passphrase](./img/linux/uninstall4.png)<br /><br />
+  - The Passphrase opens in a new window. ![Show Passphrase](./img/linux/uninstall5.png)<br /><br />
+
+- **Run the command to uninstall the agent and enter the password.**
+  - Log in as root (sudo is not enough).
+  - Run the sentinelctl command : `/opt/sentinelone/bin/sentinelctl control uninstall` > *input_your_`<passphrase>`*
+      ```bash
+      [root@localhost SentinelOne]$ sudo /opt/sentinelone/bin/sentinelctl control uninstall 
+      Enter passphrase : <input_your_passphrase>
+      Uninstalling agent...
+      Stopping agent...
+      Agent stopped
+      Successfully uninstalled agent.
+      ```

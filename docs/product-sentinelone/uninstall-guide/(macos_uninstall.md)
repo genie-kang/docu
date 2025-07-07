@@ -1,0 +1,48 @@
+---
+title: macOS Agent UnInstallation
+sidebar_position: 2
+---
+
+# SentinelOne macOS Agent Uninstall Guide
+
+> <br />The environment during system changes is most vulnerable to cyber attacks. Only users with permission to remove the management console can uninstall the Agent. It is important to thoroughly understand the user's reason before responding to the request.<br /><br />
+
+## 1. Uninstalling the SentinelOne Agent from the management console.
+
+* Click the > icon at the top to view site details,>1) Sentinels > 2) Endpoints > 3) CheckBox<br />![Agent Selcet](./img/macos/uninstall1.png)<br />
+
+&nbsp;
+* Select Actions > Endpoint Actions > Uninstall<br />![Actions](./img/macos/uninstall2.png)<br />
+
+&nbsp;
+* Select **Action approved** and then uninstall.<br />![Action approved](./img/macos/uninstall3.png)<br />
+
+&nbsp;
+* Please complete the 2FA authentication.<br />![Complete 2FA](./img/macos/uninstall4.png)<br />
+
+&nbsp;
+* Please check the management console to confirm if the agent has been successfully uninstalled.<br />![Check the console](./img/macos/uninstall5.png)<br />
+
+## 2. Use SentinelCtl to uninstall the SentinelOne agent.
+
+> <br />When using a passphrase, special care is required as it is sensitive information for security purposes.<br /><br />
+
+&nbsp;
+* Click the > icon at the top to view site details, >1) Sentinels > 2) Endpoints > 3) CheckBox<br />![Agent Selcet](./img/macos/uninstall1.png)<br />
+
+&nbsp;
+* Select Acions > Agent Acions > Show Passphrase<br />![Show Passphrase](./img/macos/uninstall6.png)<br />
+
+&nbsp;
+* Pleaese Check the Passparase<br />![Show Passphrase](./img/macos/uninstall7.png)<br />
+
+&nbsp;
+* Use SentinelCtl to uninstall.<br />![Use SentinelCtl](./img/macos/uninstall8.png)<br />
+
+    ```bash
+    sudo sentinelctl uninstall --passphrase "<passphrase>"
+    ```
+
+&nbsp;
+* Please check the management console to confirm if the agent has been successfully uninstalled.<br />![Check the console](./img/macos/uninstall5.png)<br />
+

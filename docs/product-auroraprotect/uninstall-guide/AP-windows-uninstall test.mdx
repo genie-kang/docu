@@ -1,0 +1,184 @@
+---
+title: Uninstalling Agents on Windows
+sidebar_position: 1
+---
+
+import React from 'react';
+import html2pdf from 'html2pdf.js';
+
+<button className="pdf-download-btn" onClick={() => {
+  const element = document.getElementById('pdf-content');
+
+  const opt = {
+    margin: 0.5,
+    filename: 'windows-agent-uninstall-guide.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+  };
+
+  html2pdf().from(element).set(opt).save();
+}}>
+  📄 PDF 다운로드
+</button>
+
+
+<div id="pdf-content">
+# Windows Agent 삭제
+---
+
+:::tip 주의
+- 기본적으로 AuroraPROTECT 정책상 제어판에서 에이전트 삭제가 불가합니다.
+- 제어판에서 에이전트 삭제 필요시, AuroraPROTECT 정책 수정이 필요합니다.
+- 해당 방법은 에이전트가 변경된 정책을 받아갈 수 있는, Online 상태일 경우에만 가능합니다.
+- 아래 정책 수정 가이드 참고 부탁드립니다.
+- Online 상태가 아닐 경우, 아래 기재 된 삭제 방법 참고 부탁드립니다.
+:::
+
+## 1. 에이전트 삭제를 위한 정책 수정 및 적용 (에이전트 Online 상태일 경우)
+- **➊ POLICIES** > **➋ Device Policy** > **➌ Default 정책 클릭** <br />*기본적으로 Default 정책은 모든 환경에 존재합니다.*<br />![alt text](./img/windows/image-1.png)
+
+<br />
+
+- **➊ Default 정책명 확인** > **➋ 정책 Copy** > **➌ 정책명 지정** <br />
+*기능이 활성화 되어 있는 경우 비활성화 상태로 변경해주세요.*
+  ![alt text](./img/windows/image-8.png)
+  ![alt text](./img/windows/image-11.png)
+<br />
+
+- **➍ Agent Settings** > **➎ Prevent service shutdown from device 기능 비활성화 상태 확인** > **➏ SAVE**<br />
+  ![alt text](./img/windows/image-12.png)
+<br />
+
+- **생성한 정책 확인**
+  ![alt text](./img/windows/image-13.png)
+  <br />
+
+- **➊ ASSETS** > **➋ Devices**<br />
+  ![alt text](./img/windows/image-4.png)
+<br />
+
+- **➊ NAME, IP ADDRESS 필터를 이용하여 에이전트 조회** > **➋ 에이전트 Online 상태 확인 선택** > **➌ 에이전트 체크** > **➍ ASSIGN POLICY**
+  ![alt text](./img/windows/image-7.png)
+<br />
+
+- **➊ 에이전트 삭제 정책 선택**> **➋ SAVE** > **➌ 적용된 정책 확인** <br />
+  ![alt text](./img/windows/image-14.png)
+  ![alt text](./img/windows/image-15.png)
+<br />
+
+- **➊ 우측 하단에 트레이 아이콘 우클릭** > **➋ 폴리시의 갱신 체크** > **➌ 소개** > **➍ 정책 - 에이전트 삭제 정책 확인**
+  ![alt text](./img/windows/image-16.png)
+  ![alt text](./img/windows/image-17.png)
+<br />
+<br />
+
+## 2. 제어판을 통해 에이전트 삭제
+- &nbsp; **➊ 제어판** > **➋ 프로그램 제거** > **➌ CylancePROTECT 제거** 
+  ![alt text](./img/windows/image-18.png)
+  ![alt text](./img/windows/image-19.png)
+  ![alt text](./img/windows/image-20.png)
+<br />
+
+- **➊ 제어판 - 삭제된 프로그램 확인** > **➋ 삭제된 트레이 아이콘 확인** > **➌ 삭제된 파일 경로 확인** (C:\Porgram Files\Cylance
+  ![alt text](./img/windows/image-21.png)
+  ![alt text](./img/windows/image-23.png)
+  ![alt text](./img/windows/image-24.png)
+<br />
+<br />
+
+## 3. 삭제툴을 이용한 에이전트 삭제
+- [👉삭제툴 다운로드 링크](https://pagonetworks-my.sharepoint.com/:f:/g/personal/pago5_pagonetworks_onmicrosoft_com/EpjaFtUa3PZIkKLHO22r4z0Ba12marMs9mTYEt5SQbsuDg?e=lnR1ld)
+<br />
+
+- **➊ 32bit/64bit 삭제툴 중에서 해당하는 파일 다운로드 후 관리자 권한으로 cmd 실행**
+  ![alt text](./img/windows/image-26.png)
+<br />
+
+&nbsp;
+- **➊ 삭제툴 경로 복사** > **➋ 삭제툴 경로 이동** > **➌ 삭제 명령어 실행 (5~10분 소요)** > **➍ 실행 완료 후 시스템 재부팅** > **➎ 관리자 권한 cmd를 통해 삭제 명령어 재실행 (5~10분 소요)**
+  ```js
+  삭제툴 실행 명령어 : CylanceUninstallTool.0.10.1-x64.exe -r -f
+  ```
+  ![alt text](./img/windows/image-28.png)
+  ![alt text](./img/windows/image-29.png)
+  ![alt text](./img/windows/image-30.png)
+- &nbsp; 삭제 후 위와 동일하게 삭제된 내용 확인
+
+## 4. 레지스트리 변경을 이용한 에이전트 삭제
+- **➊ 레지스트리 편집기 실행** > **➋ 레지스트리 경로 이동** > **➌ Desktop 우클릭** > **➍ 사용 권한** > **➎ 고급**
+  &nbsp;
+
+  - 레지스트리 경로 : HKEY_LOCAK_MACHINE\SOFTWARE\Cylance\Desktop
+  ![alt text](./img/windows/image-31.png)
+  ![alt text](./img/windows/image-32.png)
+  ![alt text](./img/windows/image-33.png)<br />
+
+  &nbsp;
+
+- **➊ 변경** > **➋ Administrators 입력** > **➌ 이름 확인** > **➍ 확인** > **➎ 소유자 : Administrators 확인** > **➏ 적용 및 확인**
+  ![alt text](./img/windows/image-34.png)
+  ![alt text](./img/windows/image-35.png)
+  ![alt text](./img/windows/image-36.png)<br />
+
+  &nbsp;
+
+- **➊ Administrators 선택** > **➋ 모든 권한 - 허용 클릭** > **➌ 적용** > **➍ 확인**
+  ![alt text](./img/windows/image-37.png)<br />
+
+  &nbsp;
+
+- **➊ LastStateRestorePoint 삭제**
+  ![alt text](./img/windows/image-38.png)<br />
+
+  &nbsp;
+
+- **➊ 새로 만들기** > **➋ DWORD(32비트) 값** > **➌ 값 이름 : SelfProtectionLevel** > **➍ 값 데이터 : 1 설정** > **➎ 시스템 재부팅**<br />
+  ![alt text](./img/windows/image-39.png)
+  ![alt text](./img/windows/image-40.png)<br />
+
+  &nbsp;
+
+- **➊ 트레이 아이콘** > **➋ 종료** > **➌ CylancePROTECT 제거**<br />
+  ![alt text](./img/windows/image-41.png)
+  ![alt text](./img/windows/image-42.png)
+  ![alt text](./img/windows/image-19.png)
+- 삭제 후 위와 동일하게 삭제된 내용 확인<br />
+<br />
+
+---
+</div>
+
+<>
+
+  <div
+    style={{
+      position: 'relative',
+      paddingBottom: 'calc(50% + 25px)',
+      width: '100%',
+      height: 0,
+      transform: 'scale(1)',
+    }}
+  >
+    <iframe
+      loading="lazy"
+      className="sl-demo"
+      src="https://app.storylane.io/demo/nhcn8lzkv5nx?embed=inline"
+      name="sl-embed"
+      allow="fullscreen"
+      allowFullScreen
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        border: '1px solid rgba(63,95,172,0.35)',
+        boxShadow: '0px 0px 18px rgba(26, 19, 72, 0.15)',
+        borderRadius: '10px',
+        boxSizing: 'border-box',
+      }}
+    />
+  </div>
+
+</>

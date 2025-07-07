@@ -1,0 +1,62 @@
+---
+title: Windows Agent UnInstallation
+sidebar_position: 1
+---
+
+# SentinelOne Windows Agent Uninstallation Guide
+
+ > <br />The environment during system changes is most vulnerable to cyber attacks. It is important to thoroughly understand the user's reason before responding to the request.<br /><br />
+
+<!-- 
+### SentinelOne Windows Agent 삭제 방법
+* [제어판을 통해 삭제](#제어판)
+* [Management 콘솔을 통해 삭제](#콘솔)
+* [CLI 삭제 명령어를 사용하여 삭제](#CLI)
+* [에이전트 삭제툴을 사용하여 삭제](#삭제툴) <br>
+*각 삭제 방법에 대한 자세한 가이드는 제목을 클릭하시면 각 순서로 이동됩니다.*-->
+
+<!-- ## 1. How to Send a Request to Uninstall the Agent on Windows
+> <br />You must approve the request in the Management Console. Once approved, the Agent will be successfully uninstalled.
+> <br />Due to SentinelOne security policies, attempting to uninstall the Agent via the Control Panel will not proceed.<br />
+> - When an end user attempts to remove the agent from the endpoint, the request is automatically sent to the Administration Console. <br />
+> - The security administrator can approve or reject the request.<br /><br />
+- &nbsp; 1) Control Panel > 2) Add or Remove Programs > 3) Remove Sentinel Agent > 4) example
+  ![alt text](./img/windows/image-6.png)
+  ![alt text](./img/windows/image-1.png)
+  ![alt text](./img/windows/image-7.png) <br /> -->
+
+<!-- ## 2. How to Approve an Agent Uninstall Request 
+- &nbsp; 1) SENTINELS > 2) ENDPOINTS > 3) Filter > 4) Check the filter name **Pending uninstall** > 5) If it is not displayed, click View More Filters <br /> 
+*If the Pending Uninstall item is visible, the filter addition process is not necessary*<br /><br />
+  ![alt text](./img/windows/image-4.png)<br /><br />
+- &nbsp; 1) Pending uninstall > 2) Back to filters > 3) Pending unstall : Yes  > 4) Check the applied filters > 5) Check the retrieved assets <br />
+  *The retrieved assets will display the **Pending Uninstall** label below the asset name.*<br /><br />
+  ![alt text](./img/windows/image-5.png)
+  ![alt text](./img/windows/image-9.png)
+- &nbsp; 1) Select the agent to approve the uninstall request > 2) Actions > 3) Endpoint Actions > 4) Approve Uninstall > 5) Enter the 2FA authentication key > 6) Confirm <br />
+- The uninstall command is sent to the agent, and the uninstallation process begins.
+  - A reboot is required once for complete removal. <br />
+  *If you do not approve the uninstall request, click the **Reject Uninstall** command.* <br /><br />
+  ![alt text](./img/windows/image-12.png) <br />
+  ![alt text](./img/windows/image-15.png) <br />
+  *The 2FA authentication key entry is valid for 30 minutes.*<br /><br /> -->
+
+## 1. To uninstall Agents from the Management Console
+-  Select one or more endpoints.<br />
+  - &nbsp; **➊ SENTINELS** > **➋ ENDPOINTS** > **➌ Select endpoint**. <br />![alt text](./img/windows/image-17.png)<br />
+- Uninstall the agent from the selected endpoint: <br />
+  - &nbsp; **➊ Actions** > **➋ Endpoint Actions** > **➌ Uninstall**.<br />![alt text](./img/windows/image-18.png)<br />
+  - Complete the 2-factor authentication(2FA) to uninstall it from the console. Authentication is valid for 30 minutes, and re-authentication is required to perform actions again.<br /><br />![alt text](./img/windows/2FA.png)<br />
+<br /><br />
+
+## 2. Uninstalling Agent From the CLI
+
+- ### 1) To get the passphrase for an endpoint from the Management Console: <br />
+  - &nbsp; **➊ Actions** > **➋ Agent Actions** > **➌ Show Passphrase.**<br />![Show Passphrase](./img/windows/uninstall4.png)<br /><br />
+  - The Passphrase opens in a new window. ![Show Passphrase](./img/windows/uninstall5.png)<br /><br />
+- ### 2) Run the command to uninstall the agent and enter the password.
+  - Run Command Prompt as Administrator and execute command
+    - <span class = "text-red">*`msiexec.exe /x "C:\Program Files\SentinelOne\Sentinel Agent <Version>\SentinelInstaller.msi" UNINSTALL_KEY="<passphrase>”`*</span>.<br />
+    ```bash
+    C:\Windows\system32> msiexec.exe /x "C:\Program Files\SentinelOne\Sentinel Agent 24.1.5.277\SentinelInstaller.msi" UNINSTALL_KEY="DINE VERY BOG TELL BASH OLIN BLOB MARE GURU MET IRK TOP”
+    ```

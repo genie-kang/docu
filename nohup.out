@@ -1,0 +1,396 @@
+
+> document-site@0.0.0 start
+> docusaurus start 0.0.0.0
+
+[INFO] Starting the development server...
+
+[ERROR] [Error: ENOENT: no such file or directory, lstat '/home/pagodoc/document-site/0.0.0.0'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'lstat',
+  path: '/home/pagodoc/document-site/0.0.0.0'
+}
+[INFO] Docusaurus version: 3.7.0
+Node version: v22.13.0
+
+> document-site@0.0.0 start
+> docusaurus start --host 0.0.0.0
+
+[INFO] Starting the development server...
+[SUCCESS] Docusaurus website is running at: http://localhost:3000/
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 1.36s
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 365.31ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 351.82ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 305.65ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 241.13ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 302.92ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 369.65ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 306.46ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 204.97ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 220.11ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 273.08ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 289.74ms
+client (webpack 5.97.1) compiled successfully
+
+> document-site@0.0.0 start
+> docusaurus start --host 0.0.0.0
+
+[INFO] Starting the development server...
+[ERROR] Something is already running on port 3000.
+
+> document-site@0.0.0 start
+> docusaurus start --host 0.0.0.0
+
+[INFO] Starting the development server...
+[ERROR] Something is already running on port 3000.
+
+> document-site@0.0.0 start
+> docusaurus start --host 0.0.0.0
+
+[INFO] Starting the development server...
+[ERROR] Something is already running on port 3000.
+
+> document-site@0.0.0 start
+> docusaurus start --host 0.0.0.0
+
+[INFO] Starting the development server...
+[ERROR] Something is already running on port 3000.
+
+> document-site@0.0.0 start
+> docusaurus start --host 0.0.0.0
+
+[INFO] Starting the development server...
+[SUCCESS] Docusaurus website is running at: http://localhost:3000/
+[webpackbar] ℹ Compiling Client
+[WARNING] Docs markdown link couldn't be resolved: (../tutorial-extras/manage-docs-versions.md) in source file "/home/pagodoc/document-site/docs/product-cylanceprotect/Troubleshooting/congratulations.md" for version current
+[WARNING] Docs markdown link couldn't be resolved: (../tutorial-extras/translate-your-site.md) in source file "/home/pagodoc/document-site/docs/product-cylanceprotect/Troubleshooting/congratulations.md" for version current
+[WARNING] Docs markdown link couldn't be resolved: (../tutorial-extras/manage-docs-versions.md) in source file "/home/pagodoc/document-site/docs/product-sentinelone/deployment-guide/system-requirements.md" for version current
+[WARNING] Docs markdown link couldn't be resolved: (../tutorial-extras/translate-your-site.md) in source file "/home/pagodoc/document-site/docs/product-sentinelone/deployment-guide/system-requirements.md" for version current
+[WARNING] Docs markdown link couldn't be resolved: (../tutorial-extras/manage-docs-versions.md) in source file "/home/pagodoc/document-site/docs/product-sentinelone/troubleshooting-guide/system-requirements.md" for version current
+[WARNING] Docs markdown link couldn't be resolved: (../tutorial-extras/translate-your-site.md) in source file "/home/pagodoc/document-site/docs/product-sentinelone/troubleshooting-guide/system-requirements.md" for version current
+[webpackbar] ✔ Client: Compiled successfully in 20.38s
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 474.46ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 286.69ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 298.93ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 233.32ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 268.96ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 222.12ms
+client (webpack 5.97.1) compiled successfully
+[ERROR] Site reload failure
+Error: "title" is not allowed to be empty
+
+    at validateConfig (/home/pagodoc/document-site/node_modules/@docusaurus/core/lib/server/configValidation.js:330:15)
+    at loadSiteConfig (/home/pagodoc/document-site/node_modules/@docusaurus/core/lib/server/config.js:40:62)
+    at async Promise.all (index 1)
+    at async loadContext (/home/pagodoc/document-site/node_modules/@docusaurus/core/lib/server/site.js:39:97)
+    at async loadSite (/home/pagodoc/document-site/node_modules/@docusaurus/core/lib/server/site.js:143:21)
+    at async Object.reloadBase (/home/pagodoc/document-site/node_modules/@docusaurus/core/lib/commands/start/utils.js:62:20)
+[ERROR] Site reload failure
+Error: "title" is not allowed to be empty
+
+    at validateConfig (/home/pagodoc/document-site/node_modules/@docusaurus/core/lib/server/configValidation.js:330:15)
+    at loadSiteConfig (/home/pagodoc/document-site/node_modules/@docusaurus/core/lib/server/config.js:40:62)
+    at async Promise.all (index 1)
+    at async loadContext (/home/pagodoc/document-site/node_modules/@docusaurus/core/lib/server/site.js:39:97)
+    at async loadSite (/home/pagodoc/document-site/node_modules/@docusaurus/core/lib/server/site.js:143:21)
+    at async Object.reloadBase (/home/pagodoc/document-site/node_modules/@docusaurus/core/lib/commands/start/utils.js:62:20)
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 218.43ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 255.24ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 227.86ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 603.27ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 671.63ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 232.44ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 297.24ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 240.10ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 208.99ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 777.34ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 660.17ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 459.04ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 172.65ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 473.45ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled with some errors in 377.82ms
+Module not found: Error: Can't resolve '@site/static/img/SC_Horizontal_full-color.png' in '/home/pagodoc/document-site/src/components/HomepageFeatures'
+client (webpack 5.97.1) compiled with 1 error
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled with some errors in 268.88ms
+Module not found: Error: Can't resolve '@site/static/img/Stellar_Cyber.svg' in '/home/pagodoc/document-site/src/components/HomepageFeatures'
+client (webpack 5.97.1) compiled with 1 error
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled with some errors in 260.99ms
+SvgoParserError: /home/pagodoc/document-site/static/img/Stellar_Cyber.svg:1:1: Non-whitespace before first tag.
+client (webpack 5.97.1) compiled with 1 error
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 197.56ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 184.76ms
+client (webpack 5.97.1) compiled successfully
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/home/pagodoc/document-site/node_modules/@svgr/webpack/dist/index.js??ruleSet[1].rules[10].oneOf[0].use[0]!/home/pagodoc/document-site/static/img/Stellar_Cyber.svg': No serializer registered for SvgoParserError
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> SvgoParserError
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled with some errors in 384.50ms
+Error: MDX compilation failed for file "/home/pagodoc/document-site/docs/product-sentinelone/deployment-guide/installation/linux_installation.md"
+Cause: Expected a closing tag for `<br>` (5:74-5:78) before the end of `paragraph`
+Details:
+{
+  "column": 3,
+  "message": "Expected a closing tag for `<br>` (5:74-5:78) before the end of `paragraph`",
+  "line": 5,
+  "name": "5:3-5:78",
+  "place": {
+    "start": {
+      "_bufferIndex": 0,
+      "_index": 0,
+      "line": 5,
+      "column": 3,
+      "offset": 85
+    },
+    "end": {
+      "_bufferIndex": -1,
+      "_index": 1,
+      "line": 5,
+      "column": 78,
+      "offset": 160
+    }
+  },
+  "reason": "Expected a closing tag for `<br>` (5:74-5:78) before the end of `paragraph`",
+  "ruleId": "end-tag-mismatch",
+  "source": "mdast-util-mdx-jsx"
+}
+client (webpack 5.97.1) compiled with 1 error
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled with some errors in 294.04ms
+Error: MDX compilation failed for file "/home/pagodoc/document-site/docs/product-sentinelone/deployment-guide/installation/linux_installation.md"
+Cause: Expected a closing tag for `<br>` (5:74-5:78) before the end of `paragraph`
+Details:
+{
+  "column": 3,
+  "message": "Expected a closing tag for `<br>` (5:74-5:78) before the end of `paragraph`",
+  "line": 5,
+  "name": "5:3-5:78",
+  "place": {
+    "start": {
+      "_bufferIndex": 0,
+      "_index": 0,
+      "line": 5,
+      "column": 3,
+      "offset": 85
+    },
+    "end": {
+      "_bufferIndex": -1,
+      "_index": 1,
+      "line": 5,
+      "column": 78,
+      "offset": 160
+    }
+  },
+  "reason": "Expected a closing tag for `<br>` (5:74-5:78) before the end of `paragraph`",
+  "ruleId": "end-tag-mismatch",
+  "source": "mdast-util-mdx-jsx"
+}
+client (webpack 5.97.1) compiled with 1 error
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/home/pagodoc/document-site/node_modules/@docusaurus/mdx-loader/lib/index.js??ruleSet[1].rules[7].use[0]!/home/pagodoc/document-site/docs/product-sentinelone/deployment-guide/installation/linux_installation.md': No serializer registered for VFileMessage
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> Error -> VFileMessage
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled with some errors in 413.71ms
+Error: MDX compilation failed for file "/home/pagodoc/document-site/docs/product-sentinelone/deployment-guide/installation/linux_installation.md"
+Cause: Expected a closing tag for `<container-id>` (22:258-22:272) before the end of `paragraph`
+Details:
+{
+  "column": 3,
+  "message": "Expected a closing tag for `<container-id>` (22:258-22:272) before the end of `paragraph`",
+  "line": 22,
+  "name": "22:3-22:368",
+  "place": {
+    "start": {
+      "_bufferIndex": 0,
+      "_index": 0,
+      "line": 22,
+      "column": 3,
+      "offset": 1474
+    },
+    "end": {
+      "_bufferIndex": -1,
+      "_index": 1,
+      "line": 22,
+      "column": 368,
+      "offset": 1839
+    }
+  },
+  "reason": "Expected a closing tag for `<container-id>` (22:258-22:272) before the end of `paragraph`",
+  "ruleId": "end-tag-mismatch",
+  "source": "mdast-util-mdx-jsx"
+}
+client (webpack 5.97.1) compiled with 1 error
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/home/pagodoc/document-site/node_modules/@docusaurus/mdx-loader/lib/index.js??ruleSet[1].rules[7].use[0]!/home/pagodoc/document-site/docs/product-sentinelone/deployment-guide/installation/linux_installation.md': No serializer registered for VFileMessage
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> Error -> VFileMessage
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled with some errors in 448.39ms
+Error: MDX compilation failed for file "/home/pagodoc/document-site/docs/product-sentinelone/deployment-guide/installation/linux_installation.md"
+Cause: Image docs/product-sentinelone/deployment-guide/installation/package_down.png used in docs/product-sentinelone/deployment-guide/installation/linux_installation.md not found.
+Details:
+Error: Image docs/product-sentinelone/deployment-guide/installation/package_down.png used in docs/product-sentinelone/deployment-guide/installation/linux_installation.md not found.
+    at async Promise.all (index 1)
+client (webpack 5.97.1) compiled with 1 error
+
+> document-site@0.0.0 start
+> docusaurus start --host 0.0.0.0
+
+[INFO] Starting the development server...
+[ERROR] Something is already running on port 3000.
+
+> document-site@0.0.0 start
+> docusaurus start --host 0.0.0.0
+
+[INFO] Starting the development server...
+[ERROR] Something is already running on port 3000.
+
+> document-site@0.0.0 start
+> docusaurus start --host 0.0.0.0
+
+[INFO] Starting the development server...
+[ERROR] Something is already running on port 3000.
+
+> document-site@0.0.0 start
+> docusaurus start --host 0.0.0.0
+
+[INFO] Starting the development server...
+[SUCCESS] Docusaurus website is running at: http://localhost:3000/
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 1.28s
+client (webpack 5.97.1) compiled successfully
+
+> document-site@0.0.0 start
+> docusaurus start --host 0.0.0.0
+
+[INFO] Starting the development server...
+[SUCCESS] Docusaurus website is running at: http://localhost:3000/
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 1.55s
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 334.47ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 977.36ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 367.03ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 236.18ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 270.65ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 439.34ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 302.60ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 184.48ms
+client (webpack 5.97.1) compiled successfully
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 295.29ms
+client (webpack 5.97.1) compiled successfully
+
+> document-site@0.0.0 start
+> docusaurus start --host 0.0.0.0
+
+[INFO] Starting the development server...
+[SUCCESS] Docusaurus website is running at: http://localhost:3000/
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 1.34s
+client (webpack 5.97.1) compiled successfully
+[ERROR] Site reload failure
+Error: Docusaurus could not load module at path "/home/pagodoc/document-site/docusaurus.config.js"
+Cause: ParseError: Unexpected token  
+ /home/pagodoc/document-site/docusaurus.config.js:36:4
+    at loadFreshModule (/home/pagodoc/document-site/node_modules/@docusaurus/utils/lib/moduleUtils.js:36:15)
+    at loadSiteConfig (/home/pagodoc/document-site/node_modules/@docusaurus/core/lib/server/config.js:36:62)
+    ... 3 lines matching cause stack trace ...
+    at async Object.reloadBase (/home/pagodoc/document-site/node_modules/@docusaurus/core/lib/commands/start/utils.js:62:20) {
+  [cause]: Error: ParseError: Unexpected token  
+   /home/pagodoc/document-site/docusaurus.config.js:36:4
+      at loadFreshModule (/home/pagodoc/document-site/node_modules/@docusaurus/utils/lib/moduleUtils.js:33:16)
+      at loadSiteConfig (/home/pagodoc/document-site/node_modules/@docusaurus/core/lib/server/config.js:36:62)
+      at async Promise.all (index 1)
+      at async loadContext (/home/pagodoc/document-site/node_modules/@docusaurus/core/lib/server/site.js:39:97)
+      at async loadSite (/home/pagodoc/document-site/node_modules/@docusaurus/core/lib/server/site.js:143:21)
+      at async Object.reloadBase (/home/pagodoc/document-site/node_modules/@docusaurus/core/lib/commands/start/utils.js:62:20)
+}
+
+> document-site@0.0.0 start
+> docusaurus start --host 0.0.0.0
+
+[INFO] Starting the development server...
+[SUCCESS] Docusaurus website is running at: http://localhost:3000/
+[webpackbar] ℹ Compiling Client
+[webpackbar] ✔ Client: Compiled successfully in 1.45s
+client (webpack 5.97.1) compiled successfully
